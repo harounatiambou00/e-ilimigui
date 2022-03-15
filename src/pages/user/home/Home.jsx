@@ -1,10 +1,12 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useParams } from 'react-router-dom'
 
-const Home = () => {
+const Home = (props) => {
+  const params = useParams();
+  const userType = props.userType;
   return (
     <>
-      <div>Home</div>
+      <div>This is the home page of the {userType} with the id {params.userId}</div>
       <Outlet />
     </>
   )
