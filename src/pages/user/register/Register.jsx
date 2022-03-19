@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 
-import Aos from 'aos'
-import "aos/dist/aos.css";
+import { Link } from 'react-router-dom';
 
-import { Paper, Grid, TextField, InputAdornment, OutlinedInput, FormControl, InputLabel, IconButton, FormGroup, Checkbox, FormControlLabel, Button, Tabs, Tab, Box, Typography } from '@mui/material';
+
+import Aos from 'aos'
+
+
+import { Paper, Grid, TextField, InputAdornment, OutlinedInput, FormControl, InputLabel, IconButton, Checkbox, Button, Tabs, Tab, Box, Typography } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
@@ -78,6 +81,7 @@ const Register = () => {
       let response = await fetch("https://localhost:8000/api/authentification/client/register",{
         method:"POST",
         body:JSON.stringify(client),
+        credentials: "include",
         headers: {
           "Content-Type": 'application/json',
         }
@@ -101,6 +105,7 @@ const Register = () => {
       let response = await fetch("https://localhost:8000/api/authentification/seller/register",{
         method:"POST",
         body:JSON.stringify(seller),
+        credentials: "include",
         headers: {
           "Content-Type": 'application/json',
         }
@@ -120,6 +125,7 @@ const Register = () => {
         src = {img}
         data-aos="fade-right"
         alt = "img"
+        align= "center"
       />
 
       <form data-aos="fade-left" className={classes.form} onSubmit={signIn} >
@@ -129,7 +135,7 @@ const Register = () => {
           alt = "Logo"
         />
         <div className = {classes.registrationHeader}>
-          <h2  className={classes.title}>INSCRIPTION</h2>
+          <h2  className={classes.title}>Inscription</h2>
           <div className={classes.userTypeButtons}>
             <Button variant={userType === "client" ? 'contained' : 'outlined'} onClick={() => {setUserType("client")}} className={classes.userTypeButton}>ACHETEUR</Button>
             <Button variant={userType === "seller" ? 'contained' : 'outlined'} onClick={() => {setUserType("seller")}} className={classes.userTypeButton}>VENDEUR</Button>
@@ -255,7 +261,7 @@ const Register = () => {
                 </Grid>
                 <Grid item xs = {12} md = {6} className  = {classes.centerText}>
                     <small>
-                        Avez-vous déja un compte? <a href = "#">Connectez-vous</a>
+                        Avez-vous déja un compte? <Link to="/login">Connectez-vous</Link>
                     </small>
                 </Grid>
                 <Grid item xs = {12} className  = {classes.centerText}>

@@ -11,6 +11,7 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.down("sm")] : {
             maxHeight : '100vh',
         },
+        backgroundColor: "#F7F7F7"
     },
     img : {
         height :"100vh",
@@ -26,8 +27,8 @@ export default makeStyles((theme) => ({
         paddingRight : "2%",
         justifyContent : 'space-between',
         [theme.breakpoints.down("sm")] : {
-            maxHeight : '100vh',
-            overflowY : "scroll",
+            paddingLeft : '4%',
+            paddingRight : "4%",
         },
     },
     logo : {
@@ -48,11 +49,11 @@ export default makeStyles((theme) => ({
         }
     },
     title : {
-        fontFamily : "'Audiowide', cursive",
-        color: "#062C30",
+        fontFamily : "'Roboto Mono', monospace",
+        color: "#B85C38",
         [theme.breakpoints.down("md")] : {
             marginTop : theme.spacing(1),
-            marginBottom: theme.spacing(1)
+            marginBottom: theme.spacing(3)
         }
     },
     userTypeButtons : {
