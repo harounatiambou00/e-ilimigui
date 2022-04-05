@@ -105,6 +105,9 @@ const Login = () => {
                   variant="outlined" 
                   value={values.email}
                   onChange = {handleChange('email')}
+                  margin="normal"
+                  InputProps={{ style: { fontSize: 15 } }}
+                  InputLabelProps={{ style: { fontSize: 15 } }}
                 />  
               </Grid>
               <Grid item xs = {12}>
@@ -116,6 +119,9 @@ const Login = () => {
                           value={values.password}
                           onChange={handleChange('password')}
                           label="Mot de passe"
+                          margin="normal"
+                          InputProps={{ style: { fontSize: 15 } }}
+                          InputLabelProps={{ style: { fontSize: 15 } }}
                           endAdornment={
                               <InputAdornment position="end">
                                   <IconButton

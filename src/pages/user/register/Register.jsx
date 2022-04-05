@@ -16,17 +16,7 @@ import img from '../../../assets/images/registration/userRegistrationImg.jpg'
 import Logo from '../../../assets/images/Logo.png'
 
 const Register = () => {
-  useEffect(() => {
-    Aos.init({duration : 750})
-  }, [])
-
-  
-  const [userType, setUserType] = useState('client')
-  useEffect(() => {
-
-  }, userType)
-
-
+ 
   const [values, setValues] = useState({
     firstName: '',
     lastName: '',
@@ -40,6 +30,18 @@ const Register = () => {
     bankAccountNumber : '',
     });
 
+  const [userType, setUserType] = useState('client')
+    useEffect(() => {
+  
+    }, userType)
+  
+    
+    useEffect(() => {
+      Aos.init({duration : 750})
+    }, [])
+
+
+    const [RedirectToHomePage, setRedirectToHomePage] = useState(false);
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
@@ -118,6 +120,7 @@ const Register = () => {
   }
 
   const classes = useStyles();
+    
   return (
     <div className={classes.container}>
       <img 
@@ -245,10 +248,8 @@ const Register = () => {
                 /> 
               </Grid>
               <Grid item xs = {12} >
-                  <Checkbox color  = "primary"/>
-                  <small>
-                      La création de ce compte implique que vous acceptez les <a href = "#">conditions générales de vente </a> de notre entreprise.
-                      Cliquez sur la case à cocher !
+                  <small className={classes.small}>
+                      En créant un compte, vous acceptez <a href = "#"> les conditions d'utilisation</a> et <a href = "#"> la politique de confidentialité </a> de E-Ilimi.
                   </small>
               </Grid>
         </Grid>

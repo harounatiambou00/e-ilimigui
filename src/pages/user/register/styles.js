@@ -61,8 +61,9 @@ export default makeStyles((theme) => ({
         justifyContent: 'space-around',
         minWidth: '30%',
     },
-    input : {
-        marginLeft : "50px"
+    small: {
+        textAlign: 'center',
+        fontFamily : "'Roboto Mono', monospace",
     },
     registrationFooter : {
         marginTop : "2%",
