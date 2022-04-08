@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom'
 
 import "aos/dist/aos.css";
 
-import Layout from './components/_Layout/Layout'
 import {Admin, AdminHome, AdminLogin, AdminRegister} from './pages/admin'
 import {User, Home, SignIn, SignUp} from './pages/user'
 
