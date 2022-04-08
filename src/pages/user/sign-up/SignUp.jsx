@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import FirstStep from './FirstStep/FirstStep'
 
 const SignUp = () => {
   return (
-    <div>SignUp</div>
+    <FirstStep />
   )
 }
 
