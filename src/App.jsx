@@ -5,7 +5,7 @@ import "aos/dist/aos.css";
 
 import Layout from './components/_Layout/Layout'
 import {Admin, AdminHome, AdminLogin, AdminRegister} from './pages/admin'
-import {User, Home, Login, Register} from './pages/user'
+import {User, Home, SignIn, SignUp} from './pages/user'
 
 const App = () => {
   return (
@@ -15,8 +15,8 @@ const App = () => {
                 <Route index path='' element={<Home />} />
                 <Route path='client/:userId' element={<Home userType = "Client" />} />
                 <Route path='seller/:userId' element={<Home userType = "Seller"/>} />
-                <Route path='login' element={<Login />} />
-                <Route path='register' element={<Register />} />
+                <Route path='sign-in' element={<SignIn />} />
+                <Route path='sign-up' element={<SignUp />} />
             </Route>                
             <Route path='admin' element={<Admin />}>
                 <Route index path='' element={<AdminLogin />} />
