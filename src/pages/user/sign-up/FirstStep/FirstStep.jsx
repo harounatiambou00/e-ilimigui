@@ -14,7 +14,7 @@ import SecondStep from '../SecondStep/SecondStep'
 
 import Aos from 'aos';
 
-const FirstStep = () => {
+const FirstStep = ({values, handleChange, isSellerAccount, setIsSellerAccount, setFirstStepIsCompleted}) => {
 
   useEffect(() => {
     Aos.init({duration : 1000})
@@ -22,17 +22,6 @@ const FirstStep = () => {
 
   const classes = useStyles();
 
-  const [values, setValues] = useState({
-    phoneNumber : '',
-    verificationCode : '',
-    email : '',
-  });
-
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
-
-  const [isSellerAccount, setIsSellerAccount] = useState(false);
   const [signUpWithEmail, setSignUpWithEmail] = useState(false);
   const [emailAlreadyExists, setEmailAlreadyExists] = useState(false);
   const [phoneNumberAlreadyExists, setPhoneNumberAlreadyExists] = useState(false);
@@ -73,6 +62,8 @@ const FirstStep = () => {
       }
     }
     window.setTimeout(() => setContinueButtonIsLoading(false), 1000)
+
+
   }
 
   return (
