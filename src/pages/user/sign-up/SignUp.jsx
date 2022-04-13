@@ -22,7 +22,7 @@ const SignUp = () => {
   };
 
   const [isSellerAccount, setIsSellerAccount] = useState(false);
-  const [firstStepIsCompleted, setFirstStepIsCompleted] = useState(true);
+  const [firstStepIsCompleted, setFirstStepIsCompleted] = useState(false);
   const [signUpWithEmail, setSignUpWithEmail] = useState(false);
 
 
@@ -35,7 +35,9 @@ const SignUp = () => {
       <FirstStep values={values} handleChange={handleChange} signUpWithEmail={signUpWithEmail} setSignUpWithEmail={setSignUpWithEmail} isSellerAccount={isSellerAccount} setIsSellerAccount={setIsSellerAccount} setFirstStepIsCompleted={setFirstStepIsCompleted}/>
     );
   }else{
-    return <SecondStep values={values} setValues={setValues} handleChange={handleChange} signUpWithEmail={signUpWithEmail} setSignUpWithEmail={setSignUpWithEmail} isSellerAccount={isSellerAccount} setIsSellerAccount={setIsSellerAccount} setFirstStepIsCompleted={setFirstStepIsCompleted}/>
+    return (
+    <SecondStep values={values} setValues={setValues} handleChange={handleChange} signUpWithEmail={signUpWithEmail} setSignUpWithEmail={setSignUpWithEmail} isSellerAccount={isSellerAccount} setIsSellerAccount={setIsSellerAccount} setFirstStepIsCompleted={setFirstStepIsCompleted}/>
+    );
   }
 }
 
