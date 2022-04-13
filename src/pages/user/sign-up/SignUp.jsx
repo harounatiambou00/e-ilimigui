@@ -9,6 +9,12 @@ const SignUp = () => {
     phoneNumber : '',
     verificationCode : '',
     email : '',
+    firstName : '',
+    lastName : '',
+    password : '',
+    showPassword : '',
+    confirmPassword: '',
+    showConfirmPassword : ''
   });
 
   const handleChange = (prop) => (event) => {
@@ -16,8 +22,8 @@ const SignUp = () => {
   };
 
   const [isSellerAccount, setIsSellerAccount] = useState(false);
-
   const [firstStepIsCompleted, setFirstStepIsCompleted] = useState(true);
+  const [signUpWithEmail, setSignUpWithEmail] = useState(false);
 
 
   useEffect(() => {
@@ -26,10 +32,10 @@ const SignUp = () => {
   
   if(!firstStepIsCompleted){
     return(
-      <FirstStep values={values} handleChange={handleChange} isSellerAccount={isSellerAccount} setIsSellerAccount={setIsSellerAccount} setFirstStepIsCompleted={setFirstStepIsCompleted}/>
+      <FirstStep values={values} handleChange={handleChange} signUpWithEmail={signUpWithEmail} setSignUpWithEmail={setSignUpWithEmail} isSellerAccount={isSellerAccount} setIsSellerAccount={setIsSellerAccount} setFirstStepIsCompleted={setFirstStepIsCompleted}/>
     );
   }else{
-    return <SecondStep />
+    return <SecondStep values={values} setValues={setValues} handleChange={handleChange} signUpWithEmail={signUpWithEmail} setSignUpWithEmail={setSignUpWithEmail} isSellerAccount={isSellerAccount} setIsSellerAccount={setIsSellerAccount} setFirstStepIsCompleted={setFirstStepIsCompleted}/>
   }
 }
 
