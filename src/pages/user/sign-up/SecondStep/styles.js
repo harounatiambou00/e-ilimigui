@@ -2,13 +2,14 @@ import { makeStyles } from "@material-ui/core";
 
 export default makeStyles(theme =>({
     second_step_page:{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
+        paddingTop : '2%',
+        paddingBottom : '2%',
+        [theme.breakpoints.up('md')]:{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        },
         width: '100%',
-        color: '#064663'
-
     },
     second_step_page_container:{
         border: "2px solid #ddd",
@@ -17,7 +18,7 @@ export default makeStyles(theme =>({
         [theme.breakpoints.down("sm")]:{
             width: '100%',
             border : 'none'
-        }
+        },
     },
     second_step_page_header:{
         textAlign: 'center',

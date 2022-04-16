@@ -39,9 +39,11 @@ const FirstStep = ({values, handleChange, isSellerAccount, setIsSellerAccount, s
       if(signUpWithEmail){
         let sellersEmails = sellers.map(seller => seller.email);
         sellersEmails.includes(values.email) ? setEmailAlreadyExists(true) : setEmailAlreadyExists(false);
+        sellersEmails.includes(values.email) ? setFirstStepIsCompleted(false) : setFirstStepIsCompleted(true);
       }else{
         let sellersPhoneNumbers = sellers.map(seller => seller.phoneNumber);
         sellersPhoneNumbers.includes(values.phoneNumber) ? setPhoneNumberAlreadyExists(true) : setPhoneNumberAlreadyExists(false);
+        sellersPhoneNumbers.includes(values.phoneNumber) ? setFirstStepIsCompleted(false) : setFirstStepIsCompleted(true);
       }
     }
     else{
@@ -55,9 +57,11 @@ const FirstStep = ({values, handleChange, isSellerAccount, setIsSellerAccount, s
       if(signUpWithEmail){
         let clientsEmails = clients.map(client => client.email);
         clientsEmails.includes(values.email) ? setEmailAlreadyExists(true) : setEmailAlreadyExists(false);
+        clientsEmails.includes(values.email) ? setFirstStepIsCompleted(false) : setFirstStepIsCompleted(true);
       }else{
         let clientsPhoneNumbers = clients.map(client => client.phoneNumber);
         clientsPhoneNumbers.includes(values.phoneNumber) ? setPhoneNumberAlreadyExists(true) : setPhoneNumberAlreadyExists(false);
+        clientsPhoneNumbers.includes(values.phoneNumber) ? setFirstStepIsCompleted(false) : setFirstStepIsCompleted(true);
       }
     }
     window.setTimeout(() => setContinueButtonIsLoading(false), 1000)

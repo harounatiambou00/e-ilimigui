@@ -14,7 +14,11 @@ const SignUp = () => {
     password : '',
     showPassword : '',
     confirmPassword: '',
-    showConfirmPassword : ''
+    showConfirmPassword : '',
+    birthDate : '',
+    region: 'Niamey',
+    neighborhood : '',
+    bankAccountNumber : '',
   });
 
   const handleChange = (prop) => (event) => {
@@ -41,4 +45,4 @@ const SignUp = () => {
   }
 }
 
-export default SignUp
+export default SignUp 
