@@ -26,7 +26,7 @@ const SignUp = () => {
   };
 
   const [isSellerAccount, setIsSellerAccount] = useState(false);
-  const [firstStepIsCompleted, setFirstStepIsCompleted] = useState(true);
+  const [firstStepIsCompleted, setFirstStepIsCompleted] = useState(false);
   const [signUpWithEmail, setSignUpWithEmail] = useState(false);
 
 
