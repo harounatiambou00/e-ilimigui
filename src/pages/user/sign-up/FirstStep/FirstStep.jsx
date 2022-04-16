@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import useStyles from './styles';
 
-import { Divider, Grid, Button, InputLabel, FormControl, InputAdornment, FilledInput, Alert } from '@mui/material';
+import { Divider, Grid, Button, InputLabel, FormControl, InputAdornment, FilledInput, Alert, OutlinedInput, IconButton, Typography } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import { Email, Phone } from '@mui/icons-material';
 import { LoadingButton } from '@mui/lab';
@@ -104,16 +104,16 @@ const FirstStep = ({values, handleChange, isSellerAccount, setIsSellerAccount, s
               </Button>
             </Grid>
             <Grid item xs={12}>
-              <FormControl fullWidth sx={{ m: 1 }} variant='filled'>
-                <InputLabel htmlFor="outlined-adornment-for-phone-number-or-email" sx={{ fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace", ml : 2}}>{signUpWithEmail ? "Adresse email" : "Numéro de téléphone"}</InputLabel>
-                <FilledInput
-                  sx={{ fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace",}}
-                  id="outlined-adornment-for-phone-number-or-email"
-                  value={signUpWithEmail ? values.email : values.phoneNumber}
-                  onChange={signUpWithEmail ? handleChange('email') : handleChange('phoneNumber')}
-                  startAdornment={signUpWithEmail ? <InputAdornment position="start" sx={{ fontWeight: 'bold', pt : 0.5}}></InputAdornment> : <InputAdornment position="start" sx={{ fontWeight: 'bold', pt : 0.5, ml : 2}}>+227</InputAdornment>}
-                  label="Amount"
+              <FormControl fullWidth variant='outlined'>
+                <InputLabel htmlFor='phone-number-or-email' sx={{backgroundColor:'white', pl:2, pr:2, fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace"}}>{signUpWithEmail ? "Votre adresse email" : "Votre numéro de telephone"}</InputLabel>
+                <OutlinedInput
+                  fullWidth
+                  id='phone-number-or-email'
+                  sx={{fontWeight:'bold' ,fontFamily: "'Roboto Mono', monospace"}}
                   inputProps={signUpWithEmail ? {pattern : "[a-zA-Z_]+@[a-zA-z]+.[a-zA-Z_]{2,}"} : {inputMode : 'numeric', pattern : "[0-9]{8,8}", maxlength : 8}}
+                  value={signUpWithEmail ? values.email : values.phoneNumber}
+                  onChange={signUpWithEmail ? handleChange('email') : handleChange('phoneNumber')}                  
+                  startAdornment={<InputAdornment position='start' sx={{fontWeight:'bold', fontFamily: "'Roboto Mono', monospace"}}>{signUpWithEmail ? <IconButton><Email color='primary'/></IconButton> : <Typography variant='h6' sx={{fontWeight:'bold', fontFamily:"'Roboto Mono', monospace"}}>+227</Typography>}</InputAdornment>}
                 />
                 <Alert severity="error" sx={signUpWithEmail && emailAlreadyExists ? {mt : 1, mb : 1} : {display : 'none'}}>
                   Cet adresse Email existe déja

@@ -17,10 +17,7 @@ const App = () => {
                 <Route path='client/:userId' element={<Home userType = "Client" />} />
                 <Route path='seller/:userId' element={<Home userType = "Seller"/>} />
                 <Route path='sign-in' element={<SignIn />} />
-                <Route path='sign-up' element={<SignUp />} >
-                  <Route index path='' element={<FirstStep />} />
-                  <Route path='second-step' element={<SecondStep/>} />
-                </Route>
+                <Route path='sign-up' element={<SignUp />} />
             </Route>                
             <Route path='admin' element={<Admin />}>
                 <Route index path='' element={<AdminLogin />} />

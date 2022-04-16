@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material";
 
-const theme = createTheme({
+const Theme = createTheme({
     breakpoints: {
         values: {
           mobile: 0,
@@ -13,7 +13,7 @@ const theme = createTheme({
       lowBorderRadius: 4,
       mediumBorderRadius : 6,
       highBorderRadius: 10
-    }
+    }, 
 })
 
-export default theme;
+export default Theme;
