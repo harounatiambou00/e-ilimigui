@@ -5,12 +5,12 @@ import "aos/dist/aos.css";
 
 import {Admin, AdminHome, AdminLogin, AdminRegister} from './pages/admin'
 import {User, Home, SignIn, SignUp} from './pages/user'
-import FirstStep from './pages/user/sign-up/FirstStep/FirstStep';
-import SecondStep from './pages/user/sign-up/SecondStep/SecondStep';
+import { Navbar } from './components';
 
 const App = () => {
   return (
     <div>
+        <Navbar />
         <Routes>
             <Route path='/' element={<User />}>
                 <Route index path='' element={<Home />} />
