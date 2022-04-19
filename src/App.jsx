@@ -7,6 +7,7 @@ import {Admin, AdminHome, AdminLogin, AdminRegister} from './pages/admin'
 import {User, Home, SignIn, SignUp} from './pages/user'
 import { Navbar } from './components';
 import LeftBar from './components/LeftBar/LeftBar';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
                 <Route path='register' element={<AdminRegister />} />
             </Route>       
         </Routes>
+        <Footer />
     </div>
   )
 }
