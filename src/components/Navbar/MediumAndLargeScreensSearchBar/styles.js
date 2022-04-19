@@ -15,15 +15,15 @@ export default makeStyles((theme) => ({
         width:'100%',
         borderLeft : 'none',
         borderRight : 'none',
-        border : "2px solid #FFD369",
+        border : "2px solid #222831",
         outline : 'none',
         paddingLeft : '2%',
-        color : '#222831'
+        color : '#222831',
     },
     categorySelect : {
         borderRadius : 0,
         borderRight : 'none',
-        border : "2px solid #FFD369",
+        border : "2px solid #222831",
         backgroundColor : '#FFD369',
         borderTopLeftRadius : 5,
         borderBottomLeftRadius : 5, 
@@ -31,7 +31,7 @@ export default makeStyles((theme) => ({
     },
     searchIconButton : {
         backgroundColor : '',
-        border : "2px solid #FFD369",
+        border : "2px solid #222831",
         borderTopRightRadius : 5,
         borderBottomRightRadius : 5,
         borderLeft : 'none',

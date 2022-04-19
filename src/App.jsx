@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 
 import "aos/dist/aos.css";
@@ -6,11 +6,15 @@ import "aos/dist/aos.css";
 import {Admin, AdminHome, AdminLogin, AdminRegister} from './pages/admin'
 import {User, Home, SignIn, SignUp} from './pages/user'
 import { Navbar } from './components';
+import LeftBar from './components/LeftBar/LeftBar';
 
 const App = () => {
+
+  const [leftbarIsOpened,openLeftBar] = useState(false);
   return (
     <div>
-        <Navbar />
+        <Navbar leftbarIsOpened={leftbarIsOpened} openLeftBar={openLeftBar}/>
+        <LeftBar leftbarIsOpened={leftbarIsOpened} openLeftBar={openLeftBar} />
         <Routes>
             <Route path='/' element={<User />}>
                 <Route index path='' element={<Home />} />

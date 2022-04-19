@@ -10,6 +10,12 @@ const MediumAndLargeScreensSearchBar = () => {
     <div className={classes.mediumAndLargeScreensSearchBar}>
         <select className={classes.categorySelect}>
             <option value=''>Catégories</option>
+            <option value='manga'>Manga</option>
+            <option value='motivation'>Motivation</option>
+            <option value='education'>Education</option>
+            <option value='roman'>Roman</option>
+            <option value='article'>Article</option>
+            <option value='IT'>IT</option>
         </select>
         <input 
             type='text'

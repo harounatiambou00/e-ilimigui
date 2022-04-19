@@ -8,12 +8,14 @@ import { IconButton } from '@mui/material';
 import Logo from '../../../assets/images/Logo.png'
 
 
-const BrandAndLeftBarIcon = () => {
+const BrandAndLeftBarIcon = ({leftbarIsOpened, openLeftBar}) => {
     const classes = useStyles();
 
   return (
     <div className = {classes.brandAndLeftBarIcon}>
-        <IconButton>
+        <IconButton
+            onClick={() => openLeftBar(!leftbarIsOpened)}
+        >
             <Dehaze />
         </IconButton>
         <div>
