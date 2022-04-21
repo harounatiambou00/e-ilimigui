@@ -16,6 +16,7 @@ const LeftBar = ({leftbarIsOpened, openLeftBar}) => {
             open={leftbarIsOpened}
             onClose={() => openLeftBar(!leftbarIsOpened)}
             className={classes.leftBar}
+            
         >
             <div className={classes.drawerContent}>
                 <div className={classes.leftBarHeader}>

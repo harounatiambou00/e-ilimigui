@@ -6,13 +6,14 @@ export default makeStyles(theme =>({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        color : "#064663",
+        color : "#222831",
         width: '100%'
     },
     first_step_page_container:{
         border: "2px solid #ddd",
         borderRadius: '5px',
         width: '50%',
+        backgroundColor : '#EEEEEE',
         [theme.breakpoints.down("sm")]:{
             width: '90%',
         }

@@ -92,7 +92,7 @@ const FirstStep = ({values, handleChange, isSellerAccount, setIsSellerAccount, s
                 variant={isSellerAccount ? 'outlined' : 'contained'} 
                 startIcon={isSellerAccount ? '' : <CheckIcon />}
                 onClick={() => setIsSellerAccount(false)}
-                sx={{fontWeight : 'bold', fontFamily: "'Roboto Mono', monospace"}}
+                sx={isSellerAccount ? {border:'2px solid #222831', fontWeight : 'bold', fontFamily: "'Roboto Mono', monospace", color:'#222831', '&:hover' : {border:'2px solid #222831'}} : {border:'2px solid #222831', fontWeight : 'bold', fontFamily: "'Roboto Mono', monospace", backgroundColor:'#FFD369', color:'#222831', border:'2px solid #222831', '&:hover' : {backgroundColor:'#FFD369'}}}
               >
                 Acheteur
               </Button>
@@ -102,14 +102,14 @@ const FirstStep = ({values, handleChange, isSellerAccount, setIsSellerAccount, s
                 variant={isSellerAccount? 'contained' : 'outlined'} 
                 startIcon={isSellerAccount ? <CheckIcon /> : ''}
                 onClick={() => setIsSellerAccount(true)}
-                sx={{fontWeight : 'bold', fontFamily: "'Roboto Mono', monospace"}}
+                sx={isSellerAccount ? {fontWeight : 'bold', fontFamily: "'Roboto Mono', monospace", backgroundColor:'#FFD369', color:'#222831', border:'2px solid #222831', '&:hover' : {backgroundColor:'#FFD369'}} : {border:'2px solid #222831',fontWeight : 'bold', fontFamily: "'Roboto Mono', monospace", color:'#222831', '&:hover' : {border:'2px solid #222831'}}}
               >
                 Vendeur
               </Button>
             </Grid>
             <Grid item xs={12}>
               <FormControl fullWidth variant='outlined'>
-                <InputLabel htmlFor='phone-number-or-email' sx={{backgroundColor:'white', pl:2, pr:2, fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace"}}>{signUpWithEmail ? "Votre adresse email" : "Votre numéro de telephone"}</InputLabel>
+                <InputLabel htmlFor='phone-number-or-email' sx={{backgroundColor:'#EEEEEE', pl:2, pr:2, fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace"}}>{signUpWithEmail ? "Votre adresse email" : "Votre numéro de telephone"}</InputLabel>
                 <OutlinedInput
                   fullWidth
                   id='phone-number-or-email'
@@ -134,7 +134,7 @@ const FirstStep = ({values, handleChange, isSellerAccount, setIsSellerAccount, s
             <Grid item xs={12}>
               <Button 
                 variant='contained'
-                sx={continueButtonIsLoading ? {display: 'none'} : {width: '100%', fontWeight: 'bold'}}
+                sx={continueButtonIsLoading ? {display: 'none'} : {width: '100%', backgroundColor:'#FFD369', color:'#222831', fontWeight:'bold', border:'2px solid #222831', '&:hover' : {backgroundColor:'#FFD369'}}}
                 onClick={handleContinue}
               >
                 Continuer
@@ -142,7 +142,7 @@ const FirstStep = ({values, handleChange, isSellerAccount, setIsSellerAccount, s
               <LoadingButton 
                 variant='contained'
                 loading
-                sx={!continueButtonIsLoading ? {display: 'none'} : {width: '100%', fontWeight: 'bold'}}
+                sx={!continueButtonIsLoading ? {display: 'none'} : {width: '100%', fontWeight: 'bold', }}
                 onClick={handleContinue}
               >
                 Continuer
@@ -155,7 +155,7 @@ const FirstStep = ({values, handleChange, isSellerAccount, setIsSellerAccount, s
               <Divider>OU</Divider>
               <Button 
                 variant='outlined' 
-                sx={{width: '100%', fontWeight: 'bold', mt : 2, color : "#064663"}} 
+                sx={{width: '100%', fontWeight: 'bold', mt : 2, color : "#222831"}} 
                 startIcon={signUpWithEmail ? <Phone /> : <Email />}
                 onClick={() => setSignUpWithEmail(!signUpWithEmail)}
                 >

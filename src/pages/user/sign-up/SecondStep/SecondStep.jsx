@@ -113,7 +113,7 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
             <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
                 <FormControl variant='outlined' fullWidth>
-                  <InputLabel htmlFor='firstName' sx={{backgroundColor:'white', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Prénom</InputLabel>
+                  <InputLabel htmlFor='firstName' sx={{backgroundColor:'#EEEEEE', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Prénom</InputLabel>
                   <OutlinedInput
                     sx={{fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', opacity:0.9}}
                     fullWidth
@@ -121,13 +121,13 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                     label="Prénom"
                     value={values.firstName}
                     onChange={handleChange('firstName')}
+                    startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                   />
-                  <FormHelperText>Veuillez entrer votre prénom(facultatif)</FormHelperText>
                 </FormControl>
               </Grid>
               <Grid item xs={12} md={6}>
                 <FormControl variant='outlined' fullWidth>
-                  <InputLabel htmlFor='lastName' sx={{backgroundColor:'white', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Nom</InputLabel>
+                  <InputLabel htmlFor='lastName' sx={{backgroundColor:'#EEEEEE', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Nom</InputLabel>
                   <OutlinedInput
                     sx={{ fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace"}}
                     fullWidth
@@ -135,13 +135,13 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                     label="Nom"
                     value={values.lastName}
                     onChange={handleChange('lastName')}
+                    startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                   />
-                  <FormHelperText>Veuillez entrer votre nom(facultatif)</FormHelperText>
                 </FormControl>
               </Grid>
               <Grid item xs={12} md={6}>
                 <FormControl fullWidth variant='outlined'>
-                  <InputLabel htmlFor="phoneNumberr" sx={{backgroundColor:'white', fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace", px:2}}>Numéro de téléphone</InputLabel>
+                  <InputLabel htmlFor="phoneNumberr" sx={{backgroundColor:'#EEEEEE', fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace", px:2}}>Numéro de téléphone</InputLabel>
                   <OutlinedInput
                     sx={{ fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace", opacity:0.9}}
                     id="phoneNumberr"
@@ -151,12 +151,11 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                     inputProps={{inputMode : 'numeric', pattern : "[0-9]{8,8}", maxlength : 8}}
                     required
                   />
-                  <FormHelperText variant='contained' error>Veuillez entrer votre numéro de téléphone(oblligatoire)</FormHelperText>
                 </FormControl>
               </Grid>
               <Grid item xs={12} md={6}>
                 <FormControl variant='outlined' fullWidth>
-                  <InputLabel htmlFor='email' sx={{backgroundColor:'white', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Adresse email</InputLabel>
+                  <InputLabel htmlFor='email' sx={{backgroundColor:'#EEEEEE', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Adresse email</InputLabel>
                   <OutlinedInput
                     sx={{ fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace"}}
                     fullWidth
@@ -165,13 +164,13 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                     value={values.email}
                     onChange={handleChange('email')}
                     required
+                    startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                   />
-                  <FormHelperText variant='contained' error>Veuillez entrer votre adresse email(obligatoire)</FormHelperText>
                 </FormControl>
               </Grid>
               <Grid item xs={12} md={6}>
                 <FormControl fullWidth variant="outlined">
-                  <InputLabel htmlFor="password" sx={{backgroundColor:'white', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Mot de passe</InputLabel>
+                  <InputLabel htmlFor="password" sx={{backgroundColor:'#EEEEEE', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Mot de passe</InputLabel>
                   <OutlinedInput
                     sx={{ fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace"}}
                     fullWidth
@@ -180,6 +179,7 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                     value={values.password}
                     onChange={handleChange('password')}
                     required
+                    startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
@@ -193,12 +193,11 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                       </InputAdornment>
                     }
                   />
-                  <FormHelperText variant='contained' error>Veuillez entrer votre mot de passe(obligatoire)</FormHelperText>
                 </FormControl>
               </Grid>
               <Grid item xs={12} md={6}>
                 <FormControl fullWidth variant="outlined">
-                  <InputLabel htmlFor="confirmPassword" sx={{backgroundColor:'white', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Confirmez le mot de passe</InputLabel>
+                  <InputLabel htmlFor="confirmPassword" sx={{backgroundColor:'#EEEEEE', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Confirmez le mot de passe</InputLabel>
                   <OutlinedInput
                     sx={{ fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace"}}
                     fullWidth
@@ -206,6 +205,7 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                     value={values.confirmPassword}
                     onChange={handleChange('confirmPassword')}
                     required
+                    startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                     endAdornment={
                       <InputAdornment position="end">
                         <IconButton
@@ -219,12 +219,11 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                       </InputAdornment>
                     }
                   />
-                  <FormHelperText variant='contained' sx={{fontFamily : "'Robot Mono', monospace"}} error>Veuillez confirmer votre mot de passe(obligatoire)</FormHelperText>
                 </FormControl>
               </Grid>
               <Grid item xs={12} md={6} sx={!isSellerAccount ? {display:'none'} : {}}>
                 <FormControl variant='outlined' fullWidth>
-                  <InputLabel htmlFor='birth-date' sx={{backgroundColor:'white', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Date de naissance</InputLabel>
+                  <InputLabel htmlFor='birth-date' sx={{backgroundColor:'#EEEEEE', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Date de naissance</InputLabel>
                   <OutlinedInput
                     sx={{ fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace"}}
                     fullWidth
@@ -233,14 +232,15 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                     label="Date de naissance"
                     value={values.birthDate}
                     onChange={handleChange('birthDate')}
+                    startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                   />
-                  <FormHelperText variant='contained'>Veuillez entrer votre date de naissance(facultatif)</FormHelperText>
                 </FormControl>
               </Grid>
               <Grid item xs={12} md={6} sx={!isSellerAccount ? {display:'none'} : {}}>
                 <FormControl fullWidth>
-                <InputLabel id="region-select" sx={{backgroundColor:'white', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Votre région</InputLabel>
+                <InputLabel id="region-select" sx={{backgroundColor:'#EEEEEE', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Votre région</InputLabel>
                 <Select
+                  startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                   fullWidth
                   labelId="region-select"
                   value={values.region}
@@ -261,7 +261,7 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
               </Grid>
               <Grid item xs={12} md={6} sx={!isSellerAccount ? {display:'none'} : {}}>
                 <FormControl fullWidth>
-                <InputLabel id="region-select" sx={{backgroundColor:'white', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Votre quartier</InputLabel>
+                <InputLabel id="region-select" sx={{backgroundColor:'#EEEEEE', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Votre quartier</InputLabel>
                 <Select
                   fullWidth
                   labelId="neighborhood-select"
@@ -269,6 +269,7 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                   label="Votre quartier"
                   onChange={handleChange('neighborhood')}
                   sx={{fontWeight:'bold', fontFamily: "'Roboto Mono', monospace"}}
+                  startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                 >
                   {
                     neighborhoods.map((neighborhood) => {
@@ -284,7 +285,7 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
               </Grid>
               <Grid item xs={12} md={6} sx={!isSellerAccount ? {display:'none'} : {}}>
                 <FormControl variant='outlined' fullWidth>
-                  <InputLabel htmlFor='bank-account-number' sx={{backgroundColor:'white', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Numéro de compte banquaire</InputLabel>
+                  <InputLabel htmlFor='bank-account-number' sx={{backgroundColor:'#EEEEEE', fontFamily:"'Roboto Mono', monospace", fontWeight:'bold', px:2}}>Numéro de compte banquaire</InputLabel>
                   <OutlinedInput
                     sx={{ fontWeight: 'bold', fontFamily: "'Roboto Mono', monospace"}}
                     fullWidth
@@ -292,25 +293,30 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                     label="Numéro de compte banquaire"
                     value={values.bankAccountNumber}
                     onChange={handleChange('bankAccountNumber')}
+                    startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                   />
-                  <FormHelperText variant='contained' error>Veuillez entrer votre adresse numéro de compte banquaire(obligatoire)</FormHelperText>
                 </FormControl>
+              </Grid>
+              <Grid item xs={12}>
+                <small className={classes.policyInfo}>
+                  En cliquant sur <strong>Accepter et Continuer</strong>, vous acceptez la <a href=''>politique de confidentialité</a>, <a href=''>les termes et les condition d'utilistation</a>, ainsi que la <a href=''>politique de remboursement  </a> de E-Ilimi.
+                </small>
               </Grid>
               <Grid item xs={12}>
                 <Button 
                   variant='contained'
-                  sx={continueButtonIsLoading ? {display: 'none'} : {width: '100%', fontWeight: 'bold'}}
+                  sx={continueButtonIsLoading ? {display: 'none'} : {width: '100%', backgroundColor:'#FFD369', color:'#222831', fontWeight:'bold', border:'2px solid #222831', '&:hover' : {backgroundColor:'#FFD369'}}}
                   onClick={handleContinue}
                 >
-                  Continuer
+                  Accepter & Continuer
                 </Button>
                 <LoadingButton 
                   variant='contained'
                   loading
                   sx={!continueButtonIsLoading ? {display: 'none'} : {width: '100%', fontWeight: 'bold'}}
                   onClick={handleContinue}
-                >
-                  Continuer
+                > 
+                  Accepter & Continuer
                 </LoadingButton>
               </Grid>
               <Grid item xs={12}>

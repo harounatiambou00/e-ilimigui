@@ -11,12 +11,14 @@ export default makeStyles((theme) => ({
         [theme.breakpoints.down("md")] : {
             width : 250,
         },
+        backgroundColor : '#FFD369',
+        height : '100%'
     },
     leftBarHeader : {
         display : 'flex',
         justifyContent : 'space-between',
         alignItems : 'center',
-        backgroundColor : '#FFD369',
+        color : '#222831',
     }
 
 }));

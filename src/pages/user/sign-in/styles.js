@@ -9,7 +9,7 @@ export default makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        color : "#064663",
+        color : "#222831",
         width: '100%',
         overflowY: 'scroll'
     },
@@ -17,6 +17,7 @@ export default makeStyles((theme) => ({
         border: "2px solid #ddd",
         borderRadius: '5px',
         width: '40%',
+        backgroundColor : '#EEEEEE',
         [theme.breakpoints.down("sm")]:{
             width: '100%',
             height : '100%',

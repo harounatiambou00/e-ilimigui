@@ -15,6 +15,7 @@ export default makeStyles(theme =>({
         border: "2px solid #ddd",
         borderRadius: '5px',
         width: '60%',
+        backgroundColor : '#EEEEEE',
         [theme.breakpoints.down("sm")]:{
             width: '100%',
             border : 'none'
@@ -30,7 +31,7 @@ export default makeStyles(theme =>({
     form_control:{
         marginTop: theme.spacing(2),
     },
-    policyText : {
+    policyInfo : {
         fontWeight: 400,
         fontSize: '0.8em',
     },
