@@ -6,12 +6,12 @@ export default makeStyles((theme) => ({
     },
     drawerContent : {
         [theme.breakpoints.up("md")] : {
-            width : 350,
+            width : 400,
         },
         [theme.breakpoints.down("md")] : {
-            width : 250,
+            width : 300,
         },
-        backgroundColor : '#FFD369',
+        backgroundColor : '#EEEEEE',
         height : '100%'
     },
     leftBarHeader : {
