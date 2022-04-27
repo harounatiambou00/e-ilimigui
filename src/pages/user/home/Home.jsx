@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Outlet, useParams } from 'react-router-dom'
 
 const Home = (props) => {
   const params = useParams();
   const userType = props.userType;
+  /*const [authenticatedClient, setAuthenticatedClient] = useState({});
 
-  /*useEffect(() => {
+  useEffect(() => {
     (
       async () => {
         const url = "https://localhost:8000/api/authentification/client";
@@ -18,14 +19,18 @@ const Home = (props) => {
           credentials:'include',
         });
   
-        let content = await response.json();
-        console.log(content.data);
+        const content = await response.json();
+        setAuthenticatedClient(content.data);
+        console.log(authenticatedClient);
       }
     )();
   }, []);*/
   return (
     <>
-      <div>This is the home page of the {userType} with the id {params.userId} Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus necessitatibus nihil possimus at quos aut voluptatum molestiae veritatis tempora, blanditiis reprehenderit consequuntur quod dolor, sit molestias aliquid dolores vero nam. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam voluptatem beatae ducimus iusto, fugit dicta, nulla consequatur quos corporis blanditiis exercitationem alias assumenda aliquam facilis ad aut, nostrum reprehenderit quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero velit autem omnis perspiciatis? Ducimus alias, quia sunt obcaecati, in voluptates provident tempore architecto libero molestiae eius esse voluptas! Ea, sint!</div>
+      <p>
+        Le client connecté est : 
+        <br />
+      </p>
       <Outlet />
     </>
   )
