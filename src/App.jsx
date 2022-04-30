@@ -13,7 +13,7 @@ const App = () => {
 
   const [leftbarIsOpened,openLeftBar] = useState(false);
   return (
-    <div>
+      <div>
         <Navbar leftbarIsOpened={leftbarIsOpened} openLeftBar={openLeftBar}/>
         <LeftBar leftbarIsOpened={leftbarIsOpened} openLeftBar={openLeftBar} />
         <Routes>
@@ -31,7 +31,7 @@ const App = () => {
             </Route>       
         </Routes>
         <Footer />
-    </div>
+      </div>
   )
 }
 
