@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 
 import useStyles from './styles'
 
-import { Divider, IconButton, Button, FormControl, InputLabel, FilledInput, InputAdornment, Grid, Alert, Input, TextField, OutlinedInput, FormHelperText, MenuItem, Select} from '@mui/material';
+import { Divider, IconButton, Button, FormControl, InputLabel, FilledInput, InputAdornment, Grid, Alert, Input, TextField, OutlinedInput, FormHelperText, MenuItem, Select, AlertTitle} from '@mui/material';
 import { ArrowBack, Visibility, VisibilityOff, Copyright } from '@mui/icons-material';
 import { DatePicker, LoadingButton } from '@mui/lab';
 
@@ -14,7 +14,7 @@ import Aos from 'aos';
 import regions from './regions';
 import neighborhoods from './neighborhoods';
 
-const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUpWithEmail, isSellerAccount, setIsSellerAccount, setFirstStepIsCompleted}) => {
+const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUpWithEmail, isSellerAccount, setIsSellerAccount, setFirstStepIsCompleted, register, emailIsCorrect, phoneNumberIsCorrect, passwordIsCorrect, phoneNumberAlreadyExists, setPhoneNumberAlreadyExists, emailAlreadyExists, setEmailAlreadyExists, bankAccountNumberAlreadyExists, setBankAccountAlreadyExists}) => {
   const classes = useStyles();
   useEffect(() => {
     Aos.init({duration : 1000})
@@ -42,11 +42,10 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
     event.preventDefault();
   };
 
-  const [emailAlreadyExists, setEmailAlreadyExists] = useState(false);
-  const [phoneNumberAlreadyExists, setPhoneNumberAlreadyExists] = useState(false);
   const [continueButtonIsLoading, setContinueButtonIsLoading] = useState(false);
 
-  const handleContinue = async() => {
+  const handleContinue = async(e) => {
+    e.preventDefault();
     setContinueButtonIsLoading(true);
     if(isSellerAccount){
       let response = await fetch("https://localhost:8000/api/sellers/all", {
@@ -80,7 +79,9 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
         clientsPhoneNumbers.includes(values.phoneNumber) ? setPhoneNumberAlreadyExists(true) : setPhoneNumberAlreadyExists(false);
       }
     }
-    window.setTimeout(() => setContinueButtonIsLoading(false), 1000)
+    window.setTimeout(() => setContinueButtonIsLoading(false), 1000);
+    register(e);
+    console.log(emailAlreadyExists);
   }
 
   const handleSubmit = async(e) =>{
@@ -109,7 +110,7 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
         </div>
         <Divider></Divider>
         <div className={classes.second_step_page_body}>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleContinue}>
             <Grid container spacing={4}>
               <Grid item xs={12} md={6}>
                 <FormControl variant='outlined' fullWidth>
@@ -167,6 +168,9 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                     startAdornment={<InputAdornment position="start" sx={{pt : 0.5,}}></InputAdornment>}
                   />
                 </FormControl>
+                <Alert severity='error' sx={emailAlreadyExists ? {mb : 2} : {display : 'none'}}>
+                    Cet adresse email est déja utilisé.
+                </Alert>
               </Grid>
               <Grid item xs={12} md={6}>
                 <FormControl fullWidth variant="outlined">
@@ -314,7 +318,7 @@ const SecondStep = ({values, setValues, handleChange, signUpWithEmail, setSignUp
                   variant='contained'
                   loading
                   sx={!continueButtonIsLoading ? {display: 'none'} : {width: '100%', fontWeight: 'bold'}}
-                  onClick={handleContinue}
+                  type='submit'
                 > 
                   Accepter & Continuer
                 </LoadingButton>
